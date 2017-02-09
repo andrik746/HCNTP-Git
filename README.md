@@ -1,1 +1,0 @@
-# hcntp-git
