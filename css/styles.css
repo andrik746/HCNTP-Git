@@ -326,13 +326,7 @@ h5 {
   position: relative;
   right: 20px;
 }
-.swing:hover
-{
-    -webkit-animation: swing 1s ease;
-    animation: swing 1s ease;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-}
+
 /* END CLIENTS */
 
 /******************************* LOCATION ****************************/
@@ -428,6 +422,13 @@ cursor: pointer;
   .md_only {
     display: none;
   }
+  .swing:hover
+  {
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
 }
 
 /********** Medium devices only **********/
@@ -493,6 +494,16 @@ cursor: pointer;
   }
 
 /* END DESCTIPTION */
+/***************************** CLIENTS ****************************/
+.swing:hover
+  {
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+
+/* END CLIENTS */
 /***************************** LOCATION ****************************/
 
   #head_where {
@@ -633,6 +644,13 @@ h5 {
   width: 80px;
   height: 80px;
 }
+.swing:hover
+{
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
 
 /* END CLIENTS */
 /***************************** LOCATION ****************************/
