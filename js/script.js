@@ -1,4 +1,4 @@
-//paralex effect
+//////////////////////paralex effect//////////////////////////////
 	var ypos,image;
 	function parallex() {
 		image = document.getElementById('image');
@@ -6,7 +6,7 @@
 		image.style.top = ypos * .7+ 'px';
 	}
 	window.addEventListener('scroll', parallex),false;
-//end paralex
+///////////////////////end paralex/////////////////////////////////
 
 //////////////////////////scroll to anchor/////////////////////////
 $(document).ready(function(){
@@ -36,6 +36,7 @@ $(document).ready(function(){
 });
 ////////////////////////// END scroll to anchor/////////////////////////
 
+////////////////////////// UP BUTTON //////////////////////////
 window.onload = function() { // после загрузки страницы
 
 	var scrollUp = document.getElementById('scrollup'); // найти элемент
@@ -64,3 +65,4 @@ window.onload = function() { // после загрузки страницы
 		}
 	};
 };
+////////////////////////// END UP //////////////////////////

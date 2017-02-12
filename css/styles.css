@@ -33,7 +33,6 @@ body {
   padding: 0px;
   font-size: 16px;
   color: #000000;
-  background-color: #e8e9e5;
   font-family: 'OpenSansExtraBold';
 }
 a {
@@ -44,7 +43,7 @@ a:hover, a:focus, a:active, a:visited {
 }
 #image {
   position: absolute;
-  z-index: -1;
+  z-index: -5;
   width: 100%;
   height: 720px;
 }
@@ -237,9 +236,11 @@ a .b2 {
 /********************************* DESCTIPTION ******************************/
 
 #description {
-  background-image: url(../images/Back2-Large.jpg);
+  /*background-image: url(../images/Back2-Large.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: center center;*/
+  z-index: 1;
+  background-color: #eaeded;
 }
 .description_raw {
   height: 490px;
@@ -279,9 +280,9 @@ article p {
 /******************************* CLIENTS ****************************/
 
 section#clients {
+  /*background-color: white;*/
   background: white url('../images/Customers-Large.png') no-repeat center center;
   background-size: cover;
-  /*box-shadow: 0 -3px 38px #111312;*/  
 }
 .margin_div {
   margin-top: 65px;
