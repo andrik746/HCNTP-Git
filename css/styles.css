@@ -165,10 +165,13 @@ a .b2 {
 }
 .b2:active, .b2:focus, .b2visited {
   background-color: #863005;
+  border-color: #863005;
   color: white;
   box-shadow: inset 0 0 0;
 }
-
+.b2:focus {
+  outline: none;
+}
 #btm {
   margin-top: 50px;
   margin-bottom: 155px;
@@ -210,15 +213,18 @@ a .b2 {
   margin-bottom: 6px;
 }
 .services_raw {
-  height: 492px;
+  height: 420px;
 }
 #pic1_box {
   margin-top: 82px; 
-  width: 463px;
-  height: 322px;
-  position: relative;
-  right: 65px;
-  box-shadow: 0 0 40px 15px #f9ecdb;
+  width: 100%;
+  height: 100%;
+  
+  /*box-shadow: 0 0 40px 15px #f9ecdb;*/
+}
+#pic1 {
+  width: 100%;
+  height: 100%;
 }
 
 #surveyor {
@@ -236,14 +242,10 @@ a .b2 {
 /********************************* DESCTIPTION ******************************/
 
 #description {
-  /*background-image: url(../images/Back2-Large.jpg);
-  background-size: cover;
-  background-position: center center;*/
-  z-index: 1;
   background-color: #eaeded;
 }
 .description_raw {
-  height: 490px;
+  height: 418px;
 }
 article {
   margin-top: 80px;
@@ -253,15 +255,16 @@ article {
   color: #280443;
 }
 article p {
-  width: 640px;
   text-align: justify;
 }
+.pic2_box {
+  margin-top: 83px;
+  width: 100%
+  height: 100%;
+}
 #pic2 {
-  margin-top: 82px;
-  width: 463px;
-  height: 322px;
-  position: relative;
-  right: 65px;
+  width: 100%;
+  height: 100%;
 }
 .contrast img {
   -webkit-transition: all 1s ease;
@@ -283,9 +286,11 @@ section#clients {
   /*background-color: white;*/
   background: white url('../images/Customers-Large.png') no-repeat center center;
   background-size: cover;
+  /*background-attachment: fixed;*/
 }
 .margin_div {
   margin-top: 65px;
+
 }
 .second_margin_div {
   margin-top: 48px;
@@ -326,6 +331,9 @@ h5 {
   height: 113px;
   position: relative;
   right: 20px;
+}
+.subhead {
+  margin-top: 75px;
 }
 
 /* END CLIENTS */
@@ -435,7 +443,6 @@ cursor: pointer;
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
 
-
   .vis-lg {
     display: none;
   }
@@ -456,22 +463,17 @@ cursor: pointer;
 /***************************** SERVICES ****************************/
 
   .services_raw {
-  height: 644px;
-}
-  .serv_list.second.md_only {
-    right: 0px;
-    bottom: 31px;
-  }
-  .minus {
-    display: none;
+  height: 385px;
   }
   #pic1_box {
-  margin-top: 32px; 
-  width: 463px;
-  height: 322px;
-  position: relative;
-  right: 0px;
-  left: 50px;
+  margin-top: 65px; 
+  }
+  .subhead {
+    font-size: 30px;
+    margin-top: 65px;
+  }
+  .serv_list {
+    font-size: 15px;
   }
 
 /* END SERVICES */
@@ -480,22 +482,22 @@ cursor: pointer;
 
 
   .description_raw {
-    height: 490px;
+    height: 370px;
   }
   article {
     font-size: 16px;
     letter-spacing: 0.04em;
   }
   article p {
-    width: 380px;
     text-align: left;
   }
-  #pic2 {
-    right: 25px;
-  }
+
 
 /* END DESCTIPTION */
 /***************************** CLIENTS ****************************/
+.margin_div, .margin_div.right {
+  margin-top: 73px;
+}
 .swing:hover
   {
     -webkit-animation: swing 1s ease;
@@ -598,42 +600,55 @@ cursor: pointer;
 /* END HEADER */
 /***************************** SERVICES ****************************/
   .services_raw {
-    height: 400px;
+    height: 303px;
   }
-  .minus {
+  .subhead {
+    margin-top: 60px;
+    font-size: 20px;
+  }
+  .serv_list {
+    font-size: 13px;
+  }
+   #pic1_box {
+  margin-top: 60px; 
+  }
+  .serv_list.num2{
     position: relative;
-    left: 10px;
+    right: 10px;
+    width: 120%;
   }
-
 
 /* END SERVICES */
 /********************************* DESCTIPTION ******************************/
 
 
   .description_raw {
-    height: 402px;
+    height: 280px;
   }
   article {
+    margin-top: 55px;
     font-size: 15px;
   }
   article p {
-    width: 360px;
     text-align: left;
   }
-  #pic2 {
-    right: -12px;
-    width: 97%;
-    height: 97%;
+  .pic2_box {
+    margin-top: 55px;
   }
+
+
 
 /* END DESCTIPTION */
 /******************************* CLIENTS ****************************/
 
+#move {
+  padding-left: 10px;
+}
 .second_margin_div {
-  margin-top: 56px;
+  margin-top: 50px;
 }
 .second_margin_div.right {
-  margin-top: 56px;
+  margin-top: 50px;
 }
 h4 {
   font-size: 19px;
@@ -734,19 +749,22 @@ h5 {
   .services_raw {
     height: 415px;
   }
-  .minus {
-    right: 0px;
-    bottom: 31px;
-  }
   .subhead {
     font-size: 23px;
-    margin-top: 60px;
+    margin-top: 55px;
     margin-bottom: 50px;
     text-align: center;
     line-height: 1.6em;
   }
   #underlined {
     border-color: transparent;
+  }
+  .serv_list {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  #pic1_box {
+    display: none;
   }
 
 /* END SERVICES */
@@ -755,12 +773,13 @@ h5 {
 
   .description_raw {
     height: 100%;
+    margin-bottom: 0;
   }
   article {
     font-size: 15px;
     margin-left: 10px;
-    margin-top: 50px;
-    margin-bottom: 55px;
+    margin-top: 55px;
+    margin-bottom: 0px;
   }
   article p {
     width: 100%;
@@ -768,6 +787,7 @@ h5 {
   }
   #pic2 {
     display: none;
+    margin-bottom: 0;
   }
 
 /* END DESCTIPTION */
@@ -848,6 +868,7 @@ h5 {
 @media (max-width: 479px) {
   section#clients {
     background-image: url(../images/Customers-Small.jpg);
+
   }
 
   .md_only {
@@ -874,13 +895,16 @@ h5 {
     margin-top: 40px;
     margin-bottom: 25px;  
   }
-  .out {
-    display: none;
-  }
+
   .serv_list {
     font-size: 15px;
   }
+  .num2 {
+    margin-bottom: 38px;
+  }
+
     /* END SERVICES */
+  
 /********************************* DESCTIPTION ******************************/
 
 
@@ -889,7 +913,7 @@ h5 {
   }
   article {
     font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     margin-top: 40px;
   }
   article p {
