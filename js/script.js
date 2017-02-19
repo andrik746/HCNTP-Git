@@ -5,64 +5,79 @@
 		ypos = window.pageYOffset;
 		image.style.top = ypos * .7+ 'px';
 	}
-	window.addEventListener('scroll', parallex),false;
+	window.addEventListener('scroll', parallex,false);
 ///////////////////////end paralex/////////////////////////////////
 
 //////////////////////////scroll to anchor/////////////////////////
 $(document).ready(function(){
-    $("#menu").on("click","a", function (event) {
-     //отменяем стандартную обработку нажатия по ссылке
+    $(".menu").on("click","a", function (event) {
+     //cansel standart link behaviour
         event.preventDefault();
-        //забираем идентификатор бока с атрибута href
+        //select href attribute
         var id  = $(this).attr('href'),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
+        //selected height from the beginning of the page to the anchored block
             top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 1500 мс
+        //animate transition in 1500 ms
         $('body,html').animate({scrollTop: top}, 1500);
     });
-});
-
-$(document).ready(function(){
-    $("#btm").on("click","a", function (event) {
-     //отменяем стандартную обработку нажатия по ссылке
-        event.preventDefault();
-        //забираем идентификатор бока с атрибута href
-        var id  = $(this).attr('href'),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
-            top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 1500 мс
-        $('body,html').animate({scrollTop: top}, 1500);
-    });
-});
+})
 ////////////////////////// END scroll to anchor/////////////////////////
 
 ////////////////////////// UP BUTTON //////////////////////////
-window.onload = function() { // после загрузки страницы
+$(document).ready(function(){
+	var scrollUp = document.getElementById('scrollup'); //select element
 
-	var scrollUp = document.getElementById('scrollup'); // найти элемент
-
-	scrollUp.onmouseover = function() { // добавить прозрачность
-		scrollUp.style.opacity=0.3;
+	scrollUp.addEventListener('mouseover', function() { //add opacity
+		scrollUp.style.opacity=0.2;
 		scrollUp.style.filter  = 'alpha(opacity=30)';
-	};
+	}, false)
 
-	scrollUp.onmouseout = function() { //убрать прозрачность
-		scrollUp.style.opacity = 0.5;
+	scrollUp.addEventListener('mouseout', function() { //remove opacity
+		scrollUp.style.opacity = 0.4;
 		scrollUp.style.filter  = 'alpha(opacity=50)';
-	};
+	}, false)
 
-	scrollUp.onclick = function() { //обработка клика
+	scrollUp.addEventListener('click', function() { //click event
 		window.scrollTo(0,0);
-	};
-
+	}, false)
 // show button
-
-	window.onscroll = function () { // при скролле показывать и прятать блок
+	window.addEventListener('scroll', function () { //show during scrolling
 		if ( (window.pageYOffset > 400)&(window.innerWidth > 568 ) ) {
 			scrollUp.style.display = 'block';
 		} else {
 			scrollUp.style.display = 'none';
 		}
-	};
-};
+	}, false)
+})
 ////////////////////////// END UP //////////////////////////
+
+////////////////////////SCROLL ANIMATION////////////////////////
+
+var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('animated');
+    } else {
+      $element.removeClass('animated');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+
+////////////////////////SCROLL ANIMATION END ///////////////////////
