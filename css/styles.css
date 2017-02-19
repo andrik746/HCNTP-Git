@@ -1011,3 +1011,12 @@ h5 {
 }
 
 /***************************Animation End************************/
+
+
+/****************CLASS TO ENABLE MAP SCROLLING ONLY AFTER CLICK ***/
+
+.scrolloff {
+        pointer-events: none;
+    }
+
+/****************END CLASS TO ENABLE MAP SCROLLING ONLY AFTER CLICK ***/
